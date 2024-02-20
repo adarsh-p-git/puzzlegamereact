@@ -1,0 +1,46 @@
+.card {
+    position: relative;
+    perspective: 100px;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border: 2px solid #27ae60; /* Change border color to a nice shade of green */
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.card img:hover {
+    border-color: #ece91c; /* Change border color on hover to a contrasting color */
+}
+
+/* Card front */
+
+.card .front {
+    transform: rotateY(180deg);
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: #f39c12; /* Change background color to a shade of orange */
+    color: #fff; /* Text color on the front of the card */
+}
+
+.flipped .front {
+    transform: rotateY(0deg);
+}
+
+/* Card Back */
+
+.card .back {
+    transform: rotateY(0deg);
+    transition: transform 0.5s ease-in-out;
+    backface-visibility: hidden;
+    background-color: #3498db; /* Change background color to a nice shade of blue */
+    color: #fff; /* Text color on the back of the card */
+}
+
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
